@@ -1,0 +1,522 @@
+::selection {
+	background: #f0004e;
+	color: #fff;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'Averta';
+	src: url('https://shawee.io/fonts/Averta-Light.woff2') format('woff2'),
+		url('https://shawee.io/fonts/Averta-Light.woff') format('woff'),
+		url('https://shawee.io/fonts/Averta-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Averta';
+	src: url('https://shawee.io/fonts/Averta-ExtraBold.woff2') format('woff2'),
+		url('https://shawee.io/fonts/Averta-ExtraBold.woff') format('woff'),
+		url('https://shawee.io/fonts/Averta-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Averta';
+	src: url('https://shawee.io/fonts/Averta-Regular.woff2') format('woff2'),
+		url('https://shawee.io/fonts/Averta-Regular.woff') format('woff'),
+		url('https://shawee.io/fonts/Averta-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Averta-Extrathin';
+	src: url('https://shawee.io/fonts/Averta-Extrathin.woff2') format('woff2'),
+		url('https://shawee.io/fonts/Averta-Extrathin.woff') format('woff'),
+		url('https://shawee.io/fonts/Averta-Extrathin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Averta';
+	src: url('https://shawee.io/fonts/Averta-Semibold.woff2') format('woff2'),
+		url('https://shawee.io/fonts/Averta-Semibold.woff') format('woff'),
+		url('https://shawee.io/fonts/Averta-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+body {
+	font-family: 'Averta', Helvetica, sans-serif;
+	color: #999;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+#mce-responses {
+	padding: 16px 32px;
+}
+
+.spiral {
+	max-width: 550px;
+	flex: 50% 0 0;
+	background: url(https://shawee.io/spiral.svg) no-repeat;
+	background-position: 130% 50%;
+	background-size: cover;
+	opacity: 0;
+	animation: appear 0.3s ease-in forwards;
+
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 60px;
+}
+
+main > * {
+	flex: 1;
+}
+
+main header {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.container {
+	max-width: 70vw;
+	margin: auto;
+}
+
+.logo {
+	max-width: 335px;
+	opacity: 0;
+	animation: appear 0.4s ease-in forwards 0.3s;
+}
+
+#banner {
+	min-height: 90vh;
+	opacity: 0;
+	animation: appear 0.4s ease-in 0.6s forwards;
+	padding-right: 5rem;
+}
+
+#banner .content {
+	padding: 5rem 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#banner header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex: 1;
+}
+
+#banner h1 {
+	font-size: 115px;
+	font-weight: lighter;
+	color: transparent;
+	background: linear-gradient(to right , #f0004e, #ff734f);
+	background-clip: text;
+	-webkit-background-clip: text;
+	display: inline;
+}
+
+#banner h4 {
+	font-size: 36px;
+	font-weight: 600;
+}
+
+#banner form .row {
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+form {
+	width: 100%;
+	display: flex;
+}
+
+form input {
+	flex: 1;
+	padding: 12px 32px;
+	font-size: 18px;
+	font-weight: 100;
+	border: 3px solid #ddd;
+	background: #fff;
+	border-radius: 1000px;
+	margin-top: 7px;
+	color: #777;
+	outline: none;
+	font-family: 'Averta', 'Roboto', sans-serif;
+}
+
+form input::placeholder {
+	color: #999;
+}
+
+button {
+	color: #f0004e;
+	background: none;
+	font-family: 'Averta', 'Roboto', sans-serif;
+	font-weight: bolder;
+	padding: 18px 32px;
+	font-size: 22px;
+	border: 3px solid #f0004e;
+	border-radius: 1000px;
+	margin-top: 12px;
+	margin-left: 16px;
+	position: relative;
+	overflow: hidden;
+	/* transition: 0.2s cubic-bezier(0.6, -0.28, 0.74, 0.05); */
+	transition: 0.2s ease-in;
+	will-change: transform;
+}
+
+
+button:hover {
+	background: #f0004e;
+	color: #fff;
+	/* transform: scale(1.1); */
+}
+
+#newsletter-success {
+	display: none;
+}
+
+#newsletter-error {
+	display: none;
+}
+
+
+@keyframes appear {
+	0% {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+
+footer {
+	display: flex;
+	text-align: right;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+#about {
+	width: 100%;
+	padding: 10rem 2rem;
+	color: #f0004e
+}
+
+#about h1 {
+	font-weight: 100;
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+#about p {
+	margin: 1rem 0;
+}
+
+#why {
+	background: #f0004e;
+	color: #fff;
+	width: 100%;
+	padding: 10rem 2rem;
+}
+
+#why h1,
+#become h1 {
+	font-weight: 100;
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+#why h1 strong,
+#become h1 strong,
+#about h1 strong {
+	font-weight: bold;
+	display: block;
+	font-size: 4rem;
+}
+
+#why .items {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+}
+
+#why .items .item {
+	flex: 30% 0 1;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	min-height: 80px;
+	animation: appear 0.5s ease-in forwards;
+}
+
+#why .items .item h3 {
+	margin-top: 1rem;
+}
+
+#why .items .item:nth-child(2) {
+	animation-delay: .2s;
+}
+
+#why .items .item:nth-child(3) {
+	animation-delay: .4s;
+}
+
+#why .items .item svg {
+	width: 50%;
+	margin: auto;
+}
+
+svg {
+	width: 100%;
+	height: 70%;
+	opacity: 0.2;
+	transition: opacity 0.2s ease-in;
+	will-change: opacity;
+}
+
+
+#why .items .item:hover svg {
+	opacity: 1;
+	fill: #fff;
+}
+
+svg.icon {
+	opacity: 1;
+	fill: #fff;
+}
+
+
+#become {
+	background: url(https://shawee.io/images/become.svg) no-repeat;
+	background-position: bottom;
+	padding: 5rem 0;
+	margin-bottom: 3rem;
+	color: #f0004e;
+}
+
+#become .row {
+	margin-top: 5rem;
+	justify-content: flex-end;
+}
+
+#become form {
+	align-self: flex-end;
+	background: rgba(255,255,255,0.9);
+	max-width: 540px;
+	padding: 4rem;
+	border-radius: 8px;
+	box-shadow: 1px 2px 15px 2px rgba(0,0,0,.2);
+}
+
+#become form .mc-field-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+
+#become form .mc-field-group label {
+	font-weight: bold;
+	padding-left: 1rem;
+}
+
+#ambassador-success {
+	display: none;
+}
+
+#ambassador-error {
+	display: none;
+}
+
+@media screen and (max-width: 940px) {
+	#banner {
+		text-align: right;
+	}
+
+	.spiral {
+		background-position: 100% 50%;
+	}
+
+	#banner h1 {
+		font-size: 70px;
+	}
+
+
+	#banner h4 {
+		font-size: 30px;
+	}
+
+	#why, #about {
+		padding: 6rem 1rem;
+	}
+
+	#why h1, #become h1, #about h1 {
+		font-size: 2.5rem;
+	}
+
+	#why h1 strong, #become h1 strong, #about h1 strong {
+		font-size: 3rem;
+	}
+
+	#become .row {
+		justify-content: center;
+	}
+
+	.container {
+		max-width: 80vw;
+	}
+}
+
+
+@media screen and (max-width: 768px)  {
+	.container {
+		max-width: 90vw;
+	}
+
+	#why .items {
+		flex-direction: column;
+	}
+
+	#why .items .item {
+		flex-direction: row;
+		justify-content: flex-start;
+		margin: 1rem;
+		font-size: 25px;
+		align-items: center;
+	}
+
+	#why .items .item svg {
+		flex: 15% 0;
+		margin: initial;
+		margin-right: 1rem;
+	}
+
+	#become h1 {
+		font-size: 34px;
+	}
+
+	#become form {
+		max-width: 100%;
+	}
+
+	#become h1 strong {
+		font-size: 38px;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+
+	#banner {
+		padding: 1rem;
+		padding-bottom: 0;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	#banner .content {
+		padding: 2rem 0;
+		padding-bottom: 0;
+	}
+
+	#banner h4 {
+		font-size: 24px;
+	}
+
+	.spiral {
+		flex: 50% 1;
+		order: 1;
+		background-position: top center;
+	}
+
+	#banner h1 {
+		font-size: 55px;
+	}
+
+	#banner header {
+		justify-content: center;
+		margin-bottom: 40px;
+	}
+
+	#banner form .row {
+		justify-content: center;
+	}
+
+	#banner input {
+		width: 100%;
+		flex: 100%;
+	}
+
+	#become {
+		padding: 3rem 0;
+	}
+
+	#why h1, #about h1 {
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	#why h1 strong, #about h1 strong {
+		font-size: 2.5rem;
+	}
+
+	#why .item {
+		text-align: left;
+	}
+
+
+	#become h1 {
+		font-size: 30px;
+	}
+	#become h1 strong {
+		font-size: 34px;
+	}
+
+	#become .row {
+		margin-top: 24px;
+	}
+}
+
+
+@media screen and (min-width: 775px) {
+	#why .items .item svg {
+		height: auto;
+	}
+}
